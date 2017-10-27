@@ -1,0 +1,23 @@
+test: trade323123
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/trade?characterEncoding=utf8&useSSL=true
+    platform: mysql
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+
+logging:
+  level:
+    root: info
+    com.yokimi: debug
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
